@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+  background: #ffd166;
+  font-family: "Press Start 2P", system-ui;
+  padding: 30px;
+  border-radius: 10px;
+  border: 5px solid #000;
+  box-shadow: 5px 5px 0px #000;
+}
