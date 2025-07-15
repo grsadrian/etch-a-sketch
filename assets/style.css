@@ -2,6 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Press Start 2P", system-ui;
 }
 
 main {
@@ -9,17 +10,39 @@ main {
   flex-direction: column;
 }
 
-.title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options-container {
+  display: flex;
+  gap: 50px;
 }
 
 h1 {
-  background: #ffd166;
-  font-family: "Press Start 2P", system-ui;
-  padding: 30px;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 190, 224, 1) 0%,
+    rgba(96, 87, 199, 1) 50%,
+    rgba(237, 83, 224, 1) 100%
+  );
+  color: #fff;
+  padding: 20px;
   border-radius: 10px;
   border: 5px solid #000;
   box-shadow: 5px 5px 0px #000;
+  text-shadow: 3px 3px 0px #000;
+}
+
+button {
+  font-family: "Press Start 2P", system-ui;
+  cursor: pointer;
+  background: #ed53e0;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0px #000;
+  text-shadow: 2px 2px 0px #000;
 }
