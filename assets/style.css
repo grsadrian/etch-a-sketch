@@ -1,5 +1,5 @@
 body {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   font-family: "Press Start 2P", system-ui;
@@ -37,12 +37,28 @@ h1 {
 }
 
 button {
-  font-family: "Press Start 2P", system-ui;
+  font-size: 0.95em;
+  font-weight: 800;
   cursor: pointer;
   background: #ed53e0;
   color: #fff;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 10px;
   box-shadow: 3px 3px 0px #000;
-  text-shadow: 2px 2px 0px #000;
+  text-shadow: 2px 2px 2px #000;
+}
+
+#sketch-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 720px;
+  height: 720px;
+  border: 1px solid #000;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+.sketch-block {
+  border: 1px solid #000;
+  box-sizing: border-box;
 }
