@@ -9,19 +9,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        <h1>Etch-A-Sketch</h1>
+    </header>
     <main>
         <div class="menu-container">
-            <h1>Etch-A-Sketch</h1>
-            <div class="options-container">
-                <button id="clear-btn">CLEAR</button>
-                <button id="edit-btn">EDIT GRID</button>
+            <input type="color" id="color-selector" value="#1921ff">
+            <button id="color-mode">Color mode</button>
+            <button id="rainbow-mode">Rainbow mode</button>
+            <button id="eraser">Eraser</button>
+            <button id="clear">Clear</button>
+            <div id="size-container">
+                <p id="size-display">16x16</p>
+                <input type="range" id="size-selector" value="16" min="1" max="100">
             </div>
         </div>
-        <div id="sketch-container"></div>
+        <div class="content-container">
+            <div id="sketch-container"></div>
+        </div>
     </main>
+    <script src="./app.js"></script>
 </body>
 
 </html>
