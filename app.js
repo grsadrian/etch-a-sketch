@@ -2,15 +2,22 @@ const sketchContainer = document.querySelector("#sketch-container");
 const menuContainer = document.querySelector(".menu-container");
 const colorSelector = document.querySelector("#color-selector");
 const sizeGridSelector = document.querySelector("#size-selector");
-const displaySizeValue = document.querySelector("#size-value");
+const displaySizeGridValue = document.querySelector("#size-value");
 const btns = document.querySelectorAll("button");
+let modeValue = "color-mode";
+let colorValue = "#1921ff";
+let sizeGridValue = 16;
 
 btns.forEach((btn) => {
   btn.addEventListener("click", setActiveClass);
 });
 
-sizeGridSelector.addEventListener("mousemove", setSizeValue);
+sizeGridSelector.addEventListener("mousemove", setSizeGridValue);
 sizeGridSelector.addEventListener("change", changeSizeGrid);
+
+function setModeValue(value) {
+  modeValue = value;
+}
 
 function makeGrid(size) {
   const blockWidth = sketchContainer.clientWidth / size;
@@ -30,8 +37,8 @@ function reloadGrid() {
 }
 
 function changeSizeGrid(event) {
-  displaySizeValue.innerHTML = `${event.currentTarget.value} x ${event.currentTarget.value}`;
-  makeGrid(event.currentTarget.value);
+  sizeGridValue = event.currentTarget.value;
+  makeGrid(sizeGridValue);
 }
 
 function setActiveClass(event) {
@@ -43,6 +50,6 @@ function setActiveClass(event) {
   }
 }
 
-function setSizeValue(event) {
-  displaySizeValue.innerHTML = `${event.currentTarget.value} x ${event.currentTarget.value}`;
+function setSizeGridValue(event) {
+  displaySizeGridValue.innerHTML = `${event.target.value} x ${event.target.value}`;
 }
