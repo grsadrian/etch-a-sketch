@@ -138,10 +138,6 @@ button#rainbow-mode.active {
   background-color: #fefefe;
 }
 
-.sketch-block {
-  border: 1px solid #000;
-}
-
 input[type="color"] {
   appearance: none;
   background-color: transparent;

@@ -7,6 +7,9 @@ const btns = document.querySelectorAll("button");
 let modeValue = "color-mode";
 let colorValue = "#1921ff";
 let sizeGridValue = 16;
+let mouseDown;
+
+makeGrid(sizeGridValue)
 
 btns.forEach((btn) => {
   btn.addEventListener("click", setActiveClass);
@@ -14,6 +17,13 @@ btns.forEach((btn) => {
 
 sizeGridSelector.addEventListener("mousemove", setSizeGridValue);
 sizeGridSelector.addEventListener("change", changeSizeGrid);
+colorSelector.addEventListener("input", setColorValue);
+sketchContainer.addEventListener("mousedown", () => mouseDown = true);
+sketchContainer.addEventListener("mouseup", () => mouseDown = false)
+
+function setColorValue(event) {
+  colorValue = event.target.value;
+}
 
 function setModeValue(value) {
   modeValue = value;
@@ -29,11 +39,19 @@ function makeGrid(size) {
     block.style.width = `${blockWidth}px`;
     block.style.height = `${blockHeight}px`;
     sketchContainer.appendChild(block);
+    block.addEventListener("mousemove", changeColor);
   }
 }
 
 function reloadGrid() {
   sketchContainer.innerHTML = "";
+}
+
+function changeColor(event) {
+  if (mouseDown) {
+    console.log(event.currentTarget)
+    event.target.style.background = colorValue;
+  }
 }
 
 function changeSizeGrid(event) {
