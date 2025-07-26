@@ -49,7 +49,7 @@ function makeGrid(size) {
     block.style.width = `${blockWidth}px`;
     block.style.height = `${blockHeight}px`;
     sketchContainer.appendChild(block);
-    block.addEventListener("mousemove", changeColor);
+    block.addEventListener("mouseover", changeColor);
     block.addEventListener("click", changeColor);
   }
 }
