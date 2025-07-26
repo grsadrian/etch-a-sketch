@@ -17,7 +17,9 @@ menuContainer.addEventListener("click", handleButtons);
 sizeGridSelector.addEventListener("mousemove", setSizeGridValue);
 sizeGridSelector.addEventListener("change", changeSizeGrid);
 colorSelector.addEventListener("input", setColorValue);
-sketchContainer.addEventListener("mousedown", (event) => event.preventDefault() (mouseDown = true));
+sketchContainer.addEventListener("mousedown", (event) =>
+  event.preventDefault()((mouseDown = true))
+);
 sketchContainer.addEventListener("mouseup", () => (mouseDown = false));
 sketchContainer.addEventListener("mouseleave", () => (mouseDown = false));
 
@@ -72,33 +74,38 @@ function changeSizeGrid(event) {
 }
 
 function handleButtons(event) {
+  const targetId = event.target.getAttribute("id");
+
   function removeActiveClass() {
     buttons.forEach((button) => {
       button.classList.remove("active");
     });
   }
 
-  setModeValue(event.target.getAttribute("id"));
+  if (
+    targetId === "erase-mode" ||
+    targetId === "color-mode" ||
+    targetId === "rainbow-mode"
+  ) {
+    removeActiveClass();
+    event.target.classList.add("active");
+  }
+
+  setModeValue(targetId);
   switch (modeValue) {
     case "clear":
       reloadGrid();
       makeGrid(sizeGridValue);
       break;
     case "erase-mode":
-      removeActiveClass();
       rainbowModeActive = false;
-      event.target.classList.add("active");
       colorValue = "#FFF";
       break;
     case "color-mode":
-      removeActiveClass();
       rainbowModeActive = false;
-      event.target.classList.add("active");
       colorValue = colorSelector.value;
       break;
     case "rainbow-mode":
-      removeActiveClass();
-      event.target.classList.add("active");
       rainbowModeActive = true;
       break;
   }
