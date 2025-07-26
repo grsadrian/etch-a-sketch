@@ -17,9 +17,10 @@ menuContainer.addEventListener("click", handleButtons);
 sizeGridSelector.addEventListener("mousemove", setSizeGridValue);
 sizeGridSelector.addEventListener("change", changeSizeGrid);
 colorSelector.addEventListener("input", setColorValue);
-sketchContainer.addEventListener("mousedown", (event) =>
-  event.preventDefault()((mouseDown = true))
-);
+sketchContainer.addEventListener("mousedown", (event) => {
+  event.preventDefault();
+  mouseDown = true;
+});
 sketchContainer.addEventListener("mouseup", () => (mouseDown = false));
 sketchContainer.addEventListener("mouseleave", () => (mouseDown = false));
 
