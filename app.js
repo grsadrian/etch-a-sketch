@@ -17,12 +17,11 @@ menuContainer.addEventListener("click", handleButtons);
 sizeGridSelector.addEventListener("mousemove", setSizeGridValue);
 sizeGridSelector.addEventListener("change", changeSizeGrid);
 colorSelector.addEventListener("input", setColorValue);
-sketchContainer.addEventListener("mousedown", (event) => {
+document.addEventListener("mousedown", (event) => {
   event.preventDefault();
   mouseDown = true;
 });
-sketchContainer.addEventListener("mouseup", () => (mouseDown = false));
-sketchContainer.addEventListener("mouseleave", () => (mouseDown = false));
+document.addEventListener("mouseup", () => (mouseDown = false));
 
 function generateRainbowColor() {
   const r = Math.floor(Math.random() * 256);
