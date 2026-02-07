@@ -4,6 +4,7 @@ const colorSelector = document.querySelector("#color-selector");
 const sizeGridSelector = document.querySelector("#size-selector");
 const displaySizeGridValue = document.querySelector("#size-value");
 const buttons = document.querySelectorAll("button");
+const modalBtn = document.querySelector("button#yes");
 let modeValue = "color-mode";
 let colorValue = "#1921ff";
 let sizeGridValue = 16;
@@ -22,6 +23,9 @@ sketchContainer.addEventListener("mousedown", (event) => {
   mouseDown = true;
 });
 document.addEventListener("mouseup", () => (mouseDown = false));
+modalBtn.addEventListener("click", () => {
+  document.querySelector(".modal-container").style.display = "none";
+});
 
 function generateRainbowColor() {
   const r = Math.floor(Math.random() * 256);
